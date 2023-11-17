@@ -7,8 +7,8 @@ export const SliderItem = styled("img")(() => ({
 
 export const SliderNavigation = styled("div")(() => ({
   position: "absolute",
-  top: 48,
-  right: 48,
+  top: "16%",
+  right: "3%",
   display: "flex",
   alignItems: "center",
   gap: 8,

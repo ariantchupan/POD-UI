@@ -19,8 +19,8 @@ a {
 
 .dashboard-slider .swiper-pagination {
   width: initial !important;
-  top: 228px !important;
-  left: 48px !important;
+  top: 74% !important;
+  left: 3% !important;
 }
 .dashboard-slider .swiper-pagination .swiper-pagination-bullet {
   width: 8px !important;
@@ -29,6 +29,8 @@ a {
   opacity: 1 !important;
 }
 
-.dashboard-slider .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+.dashboard-slider
+  .swiper-pagination
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background-color: #fff !important;
 }

@@ -9,4 +9,5 @@ export const themeColors = {
   menu: "#5C8AA7",
   border: "#C2C2C2",
   link: "#2E6689",
+  subtitle: "#5C8AA7",
 };

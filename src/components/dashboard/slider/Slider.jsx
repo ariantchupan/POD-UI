@@ -14,9 +14,9 @@ import ArrowIcon from "../../../assets/icons/Arrow.icon";
 
 const Slider = () => {
   return (
-    <Box sx={{ position: "relative" }}className="custom-slider">
+    <Box sx={{ position: "relative" }} className="custom-slider">
       <SliderNavigation>
-        <SliderNavigationButton className="next">
+        <SliderNavigationButton className="prev">
           <ArrowIcon
             width={16}
             height={16}
@@ -24,7 +24,7 @@ const Slider = () => {
             style={{ transform: "rotate(270deg)" }}
           />
         </SliderNavigationButton>
-        <SliderNavigationButton className="prev">
+        <SliderNavigationButton className="next">
           <ArrowIcon
             width={16}
             height={16}
