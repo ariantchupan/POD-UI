@@ -14,6 +14,13 @@ export const LayoutContainer = styled("div")(() => ({
 export const PageContainer = styled("div")(({ sidebarWidth }) => ({
   display: "grid",
   gap: 24,
-  gridTemplateColumns: `${sidebarWidth} calc(100% - ${sidebarWidth})`,
+  gridTemplateColumns: `${sidebarWidth} calc(100% - 24px - ${sidebarWidth})`,
   transition: "0.3s",
+}));
+
+export const Page = styled("div")(() => ({
+  padding: 24,
+  backgroundColor: themeColors.card,
+  borderRadius: 10,
+  boxShadow: "0px 0px 8px 0px rgba(0, 0, 0, 0.08)",
 }));

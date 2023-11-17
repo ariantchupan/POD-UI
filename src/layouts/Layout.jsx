@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { LayoutContainer, PageContainer } from "./layout.styles";
+import { LayoutContainer, Page, PageContainer } from "./layout.styles";
 import Header from "./header/Header";
 import Sidebar from "./sidebar/Sidebar";
 import { useLocation } from "react-router-dom";
@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
           sidebarWidth={sidebarWidth}
           setSidebarWidth={setSidebarWidth}
         />
-        {children}
+        <Page>{children}</Page>
       </PageContainer>
     </LayoutContainer>
   );

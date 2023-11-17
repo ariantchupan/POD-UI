@@ -12,3 +12,23 @@ ul {
 a {
   text-decoration: none;
 }
+
+.custom-slider .swiper-button-disabled {
+  opacity: 0.5;
+}
+
+.dashboard-slider .swiper-pagination {
+  width: initial !important;
+  top: 228px !important;
+  left: 48px !important;
+}
+.dashboard-slider .swiper-pagination .swiper-pagination-bullet {
+  width: 8px !important;
+  height: 8px !important;
+  background-color: rgba(0, 66, 107, 1) !important;
+  opacity: 1 !important;
+}
+
+.dashboard-slider .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #fff !important;
+}
