@@ -8,4 +8,5 @@ export const themeColors = {
   page: "#F2F2F2B2",
   menu: "#5C8AA7",
   border: "#C2C2C2",
+  link: "#2E6689",
 };
