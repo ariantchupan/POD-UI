@@ -2,9 +2,10 @@ import { InputBase, styled } from "@mui/material";
 import { themeColors } from "../../constants/colors";
 import { Link } from "react-router-dom";
 
-export const LoginCard = styled("div")(() => ({
-  width: "100%",
-  height: "100%",
+export const LoginCard = styled("div")(({ width, height }) => ({
+  width: width ?? "100%",
+  height: height ?? "100%",
+  borderRadius: width ? 10 : 0,
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
@@ -27,10 +28,16 @@ export const LoginCard = styled("div")(() => ({
   },
 }));
 
-export const Logo = styled("img")(() => ({
+export const Logo = styled("img")(({ mt, desktopDisplay }) => ({
   width: 134,
   height: 58,
-  marginTop:150
+  marginTop: 150,
+  "@media(max-width:900px)": {
+    marginTop: mt ?? 150,
+  },
+  "@media(min-width:900px)": {
+    display: desktopDisplay ?? "initial",
+  },
 }));
 
 export const Title = styled("h3")(() => ({

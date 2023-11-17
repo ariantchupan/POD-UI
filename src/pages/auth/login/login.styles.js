@@ -6,7 +6,7 @@ export const LoginContainer = styled("div")(() => ({
   width: "100wh",
   position: "relative",
   background: `url(/img/photologin.png)`,
-  backgroundSize: "cover",
+  backgroundSize: "",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
@@ -29,6 +29,9 @@ export const StepContainer = styled("div")(() => ({
   display: "flex",
   alignItems: "center",
   gap: 4,
+  "@media(max-width:900px)": {
+    display: "none",
+  },
 }));
 
 export const StepDot = styled("span")(({ state }) => ({
