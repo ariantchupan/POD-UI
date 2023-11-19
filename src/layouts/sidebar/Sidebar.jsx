@@ -51,7 +51,7 @@ const Sidebar = ({ sidebarWidth, setSidebarWidth }) => {
             <SidebarMenuItem
               key={index}
               to={path}
-              state={activePath === path ? "active" : "deactive"}
+              state={activePath.startsWith(path) ? "active" : "deactive"}
               sidebar={sidebarWidth === "292px" ? "open" : "close"}
             >
               <Stack direction="row" spacing={1}>
@@ -60,10 +60,10 @@ const Sidebar = ({ sidebarWidth, setSidebarWidth }) => {
                   height={sidebarWidth === "110px" ? "32px" : null}
                   color={
                     sidebarWidth === "110px"
-                      ? activePath === path
+                      ? activePath.startsWith(path)
                         ? themeColors.card
                         : themeColors.menu
-                      : activePath === path
+                      : activePath.startsWith(path)
                       ? themeColors.primary
                       : themeColors.menu
                   }

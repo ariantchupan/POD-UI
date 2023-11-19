@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import ThemePanelProvider from "./context/ThemeProvider";
 import { allRoutes } from "./routes/all.routes";
 import { Suspense } from "react";
@@ -20,6 +20,7 @@ function App() {
               }
             />
           ))}
+          <Route path="/" element={<Navigate to="/dashboard" replace />} />
         </Routes>
       </Layout>
     </ThemePanelProvider>

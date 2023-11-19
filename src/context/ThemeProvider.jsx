@@ -25,6 +25,9 @@ export const theme = createTheme({
     primary: {
       main: themeColors.primary,
     },
+    secondary: {
+      main: themeColors.error,
+    },
     error: { main: themeColors.error },
   },
   components: {

@@ -10,4 +10,9 @@ export const themeColors = {
   border: "#C2C2C2",
   link: "#2E6689",
   subtitle: "#5C8AA7",
+  breadcrumb1: "#222222",
+  breadcrumb2: "#777777",
+  placeholder: "#A9A9A9",
+  cardTitle: "#222222",
+  cardSubtitle: "#777777",
 };

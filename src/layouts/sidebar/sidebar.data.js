@@ -6,7 +6,7 @@ export const sidebarData = [
   {
     title: "داشبورد",
     icon: DashboardIcon,
-    path: "/",
+    path: "/dashboard",
   },
   {
     title: "دارایی های من",

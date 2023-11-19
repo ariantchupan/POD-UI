@@ -13,7 +13,7 @@ const Dashboard = () => {
         <QuickAccess
           title="خدمات"
           subtitle="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ"
-          path="/services"
+          path="/dashboard/services"
           image="/img/services.png"
         />
       </Grid>
@@ -21,7 +21,7 @@ const Dashboard = () => {
         <QuickAccess
           title="بازرگانی"
           subtitle="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ"
-          path="/comercial"
+          path="/dashboard/comercial"
           image="/img/comercial.png"
         />
       </Grid>
