@@ -21,7 +21,7 @@ const Dashboard = () => {
         <QuickAccess
           title="بازرگانی"
           subtitle="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ"
-          path="/dashboard/comercial"
+          path="/dashboard/commercial"
           image="/img/comercial.png"
         />
       </Grid>
