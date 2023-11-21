@@ -5,6 +5,8 @@ const ServicesPage = lazy(() => import("../pages/dashboard/Services.page"));
 const ComercialPage = lazy(() => import("../pages/dashboard/Comercial.page"));
 //Auth
 const LoginPage = lazy(() => import("../pages/auth/login/Login.page"));
+//My assets
+const MachineryPage = lazy(() => import("../pages/myAssets/Machinery.page"));
 
 export const allRoutes = [
   {
@@ -23,5 +25,10 @@ export const allRoutes = [
   {
     path: "/auth/login",
     component: LoginPage,
+  },
+  //My assets
+  {
+    path: "/my-assets/machinery",
+    component:MachineryPage
   },
 ];
