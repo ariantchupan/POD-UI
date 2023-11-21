@@ -36,13 +36,14 @@ const CheckOtp = ({ otp, setOtp, next, phoneNumber }) => {
     } else {
       try {
         setLoading(true);
-        const res = await axios.post(`${BACK_END_DOMAIN}/connect/token`, {
-          phone_number: phoneNumber,
-          verification_token: otp,
-          grant_type: "phone_number_token",
-          client_id: "phone_number_authentication",
-          client_secret: "secret",
-        });
+        const params = new URLSearchParams();
+        params.append('phone_number', phoneNumber);
+        params.append('verification_token', otp);
+        params.append('grant_type', "phone_number_token");
+        params.append('client_id', "phone_number_authentication");
+        params.append('client_secret', "secret");
+
+        const res = await axios.post(`${BACK_END_DOMAIN}/connect/token`, params);
         saveToken(res.data.access_token, res.data.refresh_token);
         next();
       } catch (error) {
