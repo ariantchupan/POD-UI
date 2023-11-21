@@ -9,7 +9,7 @@ import {
   Title,
 } from "./loginCard.styles";
 import { Box, Button } from "@mui/material";
-import { BACK_END_DOMAIN } from "../../constants/url";
+import { API_URL, BACK_END_DOMAIN } from "../../constants/url";
 import axios from "axios";
 import { saveToken } from "../../services/tokenService";
 import { toastNoti } from "../../utils/toastNoti";
@@ -37,26 +37,37 @@ const CheckOtp = ({ otp, setOtp, next, phoneNumber }) => {
       try {
         setLoading(true);
         const params = new URLSearchParams();
-        params.append('phone_number', phoneNumber);
-        params.append('verification_token', otp);
-        params.append('grant_type', "phone_number_token");
-        params.append('client_id', "phone_number_authentication");
-        params.append('client_secret', "secret");
-
-        const res = await axios.post(`${BACK_END_DOMAIN}/connect/token`, params);
+        params.append("phone_number", phoneNumber);
+        params.append("verification_token", otp);
+        params.append("grant_type", "phone_number_token");
+        params.append("client_id", "phone_number_authentication");
+        params.append("client_secret", "secret");
+        const res = await axios.post(
+          `${BACK_END_DOMAIN}/connect/token`,
+          params
+        );
         saveToken(res.data.access_token, res.data.refresh_token);
         next();
       } catch (error) {
-        // toastNoti("error", error.response.data.message);
-        console.log(error);
+        toastNoti("error", "شماره وارد شده صحیح نمی باشد");
       } finally {
         setLoading(false);
       }
     }
   };
 
-  const resendCode = () => {
-    setTime(59);
+  const resendCode = async () => {
+    try {
+      setLoading(true);
+      await axios.post(`${API_URL}/verify_phone_number`, {
+        phonenumber: phoneNumber,
+      });
+      setTime(59);
+    } catch (error) {
+      toastNoti("error", error.response.data.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -87,7 +98,7 @@ const CheckOtp = ({ otp, setOtp, next, phoneNumber }) => {
       ) : (
         <Button
           onClick={resendCode}
-          sx={{ width: 287, marginTop: "30px" }}
+          sx={{ width: 287, marginTop: "10px" }}
           disabled={loading}
         >
           ارسال مجدد

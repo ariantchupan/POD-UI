@@ -32,8 +32,7 @@ const GetOtp = ({ phoneNumber, setPhoneNumber, next }) => {
         });
         next();
       } catch (error) {
-        // toastNoti("error", error.response.data.message);
-        console.log(error);
+        toastNoti("error", error.response.data.message);
       } finally {
         setLoading(false);
       }
