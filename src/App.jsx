@@ -2,7 +2,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import ThemePanelProvider from "./context/ThemeProvider";
 import { allRoutes } from "./routes/all.routes";
 import { Suspense } from "react";
-import Layout from "./layouts/layout";
+import Layout from "./layouts/Layout";
 
 function App() {
   return (
