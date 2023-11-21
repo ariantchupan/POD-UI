@@ -12,6 +12,7 @@ import { Box, Button } from "@mui/material";
 import { BACK_END_DOMAIN } from "../../constants/url";
 import axios from "axios";
 import { saveToken } from "../../services/tokenService";
+import { toastNoti } from "../../utils/toastNoti";
 
 const CheckOtp = ({ otp, setOtp, next, phoneNumber }) => {
   const [error, setError] = useState("");
@@ -45,7 +46,8 @@ const CheckOtp = ({ otp, setOtp, next, phoneNumber }) => {
         saveToken(res.data.access_token, res.data.refresh_token);
         next();
       } catch (error) {
-        toastNoti("error", error.response.data.message);
+        // toastNoti("error", error.response.data.message);
+        console.log(error);
       } finally {
         setLoading(false);
       }
