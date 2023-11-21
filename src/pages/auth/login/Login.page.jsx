@@ -19,7 +19,12 @@ const LoginPage = () => {
         />
       )}
       {step === 1 && (
-        <CheckOtp otp={otp} setOtp={setOtp} next={() => setStep(2)} />
+        <CheckOtp
+          otp={otp}
+          phoneNumber={phoneNumber}
+          setOtp={setOtp}
+          next={() => setStep(2)}
+        />
       )}
       {step === 2 && <Start />}
       <StepContainer>

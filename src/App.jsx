@@ -1,10 +1,30 @@
-import { Navigate, Route, Routes } from "react-router-dom";
-import ThemePanelProvider from "./context/ThemeProvider";
+import {
+  Navigate,
+  Route,
+  Routes,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
+import { Suspense, useEffect } from "react";
 import { allRoutes } from "./routes/all.routes";
-import { Suspense } from "react";
+import { getJwtToken } from "./services/tokenService";
+import ThemePanelProvider from "./context/ThemeProvider";
 import Layout from "./layouts/Layout";
 
 function App() {
+  const token = getJwtToken();
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!token && location.pathname !== "/auth/login") {
+      navigate("/auth/login");
+    }
+    if (token && location.pathname.startsWith("/auth")) {
+      navigate("/");
+    }
+  }, [token, navigate, location]);
+
   return (
     <ThemePanelProvider>
       <Layout>
