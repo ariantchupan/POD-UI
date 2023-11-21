@@ -2,6 +2,7 @@ import React from "react";
 import Breadcrumb from "../../components/shared/breadcrumb/Breadcrumb";
 import { Grid, Button } from "@mui/material";
 import PlusIcon from "../../assets/icons/Plus.icon";
+import Table from "../../components/shared/table/Table";
 
 const MachineryPage = () => {
   return (
@@ -24,6 +25,9 @@ const MachineryPage = () => {
             </Button>
           }
         />
+      </Grid>
+      <Grid item xs={12}>
+        <Table />
       </Grid>
     </Grid>
   );

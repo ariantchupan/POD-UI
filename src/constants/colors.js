@@ -15,4 +15,6 @@ export const themeColors = {
   placeholder: "#A9A9A9",
   cardTitle: "#222222",
   cardSubtitle: "#777777",
+  tableHeader: "#616161",
+  tableBody:"#0D0D0D"
 };
