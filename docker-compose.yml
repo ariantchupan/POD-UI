@@ -1,0 +1,9 @@
+version: '1.0'
+
+services:
+
+  pod:
+    container_name: pod-front
+    image:  pod-front
+    ports:
+      - '5173:5173'
